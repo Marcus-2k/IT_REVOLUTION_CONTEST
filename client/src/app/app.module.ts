@@ -1,8 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { MaterialModule } from 'src/shared/material/material.module';
+import { MaterialModule } from '../app/shared/material/material.module';
 
-import { RoutingModule } from 'src/shared/routing/routing.module';
+// Routing
+import { RoutingModule } from '../app/shared/routing/routing.module';
+
 import { AppComponent } from './app.component';
 
 @NgModule({

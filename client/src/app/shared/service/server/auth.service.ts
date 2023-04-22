@@ -1,21 +1,21 @@
-import { HttpClient } from "@angular/common/http";
-import { Injectable } from "@angular/core";
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
 
-import { Observable, tap } from "rxjs";
+import { Observable, tap } from 'rxjs';
 
-import { UserLogin, UserRegister } from "../../interface/interfaces";
+import { UserLogin, UserRegister } from '../../interface/interfaces';
 
-import { environment } from "src/environments/environment";
+import { environment } from 'src/environments/environment';
 
 @Injectable({
-  providedIn: "root",
+  providedIn: 'root',
 })
 export class AuthService {
   constructor(private http: HttpClient) {}
 
   private token: string | null = null;
 
-  url_server: string = environment.URL_SERVER_API + "auth/";
+  url_server: string = environment.URL_SERVER_API + 'auth/';
 
   register(
     user: UserRegister
@@ -28,7 +28,7 @@ export class AuthService {
       )
       .pipe(
         tap(({ accessToken }) => {
-          localStorage.setItem("auth-token", accessToken);
+          localStorage.setItem('auth-token', accessToken);
           this.setToken(accessToken);
         })
       );
@@ -45,7 +45,7 @@ export class AuthService {
       )
       .pipe(
         tap(({ accessToken }) => {
-          localStorage.setItem("auth-token", accessToken);
+          localStorage.setItem('auth-token', accessToken);
           this.setToken(accessToken);
         })
       );
@@ -66,7 +66,7 @@ export class AuthService {
       )
       .pipe(
         tap(({ accessToken }) => {
-          localStorage.setItem("auth-token", accessToken);
+          localStorage.setItem('auth-token', accessToken);
           this.setToken(accessToken);
         })
       );
@@ -80,8 +80,8 @@ export class AuthService {
       .pipe(
         tap(() => {
           this.setToken(null);
-          localStorage.removeItem("auth-token");
-          localStorage.removeItem("_id");
+          localStorage.removeItem('auth-token');
+          localStorage.removeItem('_id');
         })
       );
   }

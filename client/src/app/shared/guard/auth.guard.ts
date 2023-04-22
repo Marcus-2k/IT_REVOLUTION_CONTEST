@@ -8,7 +8,7 @@ import {
 } from '@angular/router';
 import { Observable, of } from 'rxjs';
 
-import { AuthService } from 'src/service/server/auth.service';
+import { AuthService } from '../service/server/auth.service';
 // import { OpenDialogService } from "src/service/open-dialog.service";
 
 @Injectable({
