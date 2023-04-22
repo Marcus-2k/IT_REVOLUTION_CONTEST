@@ -29,13 +29,6 @@ def add_real_estate(request):
         serializer = AddOrUpdateEstateSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save(user=request.user)
-            # new_data = serializer.save(commit=False)
-            # new_data.user = request.user
-            # new_data.save()
-            # serializer.save()
-            # serializer.save(commit=False)
-            # serializer.user = request.user
-            # serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
@@ -43,13 +36,16 @@ def add_real_estate(request):
 @api_view(['PUT'])
 @permission_classes([permissions.IsAuthenticated])
 def update_real_estates(request, pk):
-    queryset = RealEstate.objects.get(pk=pk)
+    try:
+        queryset = RealEstate.objects.get(pk=pk)
+    except RealEstate.DoesNotExist:
+        return Response(status=status.HTTP_404_NOT_FOUND)
     if queryset.user == request.user:
-        serializer = AddOrUpdateEstateSerializer(data=request.data)
+        serializer = AddOrUpdateEstateSerializer(queryset, data=request.data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=status.HTTP_200_OK)
-        return Response(serializer.errors)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
 @api_view(['DELETE'])
