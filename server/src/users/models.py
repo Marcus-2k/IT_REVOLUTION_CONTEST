@@ -1,8 +1,10 @@
+from django.conf import settings
 from django.db import models
 from django.contrib.auth.models import AbstractUser, AbstractBaseUser, PermissionsMixin, Group, Permission
 from django.utils import timezone
 from django.utils.translation import gettext_lazy as _
 from .manager import CustomUserManager
+from ..core.models import RealEstate
 
 
 class CustomUser(AbstractUser, PermissionsMixin):
@@ -24,3 +26,9 @@ class CustomUser(AbstractUser, PermissionsMixin):
 
     def create_user(self):
         pass
+
+
+class UserProfile(models.Model):
+    user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, blank=True, null=True)
+    real_estate = models.ForeignKey(RealEstate, blank=True, null=True, on_delete=models.PROTECT)
+
