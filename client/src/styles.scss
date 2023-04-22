@@ -1,5 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 
+@import url("scss/normalize.scss");
+
 html {
   scroll-behavior: smooth;
 }
@@ -7,7 +9,16 @@ html {
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
-
+  &.active {
+    overflow: hidden;
+  }
+  &.active__menu {
+    overflow: hidden;
+    padding: 0 10px 0 0;
+    @media (max-width: 1000px) {
+      padding: 0;
+    }
+  }
   &::-webkit-scrollbar {
     width: 10px;
     height: 8px;
