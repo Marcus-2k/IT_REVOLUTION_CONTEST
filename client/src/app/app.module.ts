@@ -23,11 +23,8 @@ import { HistoryOperationsComponent } from './layouts/history-operations/history
 import { LoginComponent } from './layouts/auth/login/login.component';
 import { RegisterComponent } from './layouts/auth/register/register.component';
 import { TokenInterceptor } from './shared/classes/token.interseptor';
-<<<<<<< HEAD
 import { ApartmentsCardsComponent } from './layouts/apartments-cards/apartments-cards.component';
-=======
 import { HeaderComponent } from './layouts/components/header/header.component';
->>>>>>> 1d5c53da72a7df859e8150ee9f4d91db702e4ea5
 
 @NgModule({
   declarations: [
@@ -36,11 +33,8 @@ import { HeaderComponent } from './layouts/components/header/header.component';
     HistoryOperationsComponent,
     LoginComponent,
     RegisterComponent,
-<<<<<<< HEAD
     ApartmentsCardsComponent,
-=======
     HeaderComponent,
->>>>>>> 1d5c53da72a7df859e8150ee9f4d91db702e4ea5
   ],
   imports: [
     BrowserModule,
