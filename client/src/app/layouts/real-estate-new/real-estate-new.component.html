@@ -1,10 +1,56 @@
 <!--  -->
 
 <form>
-  <mat-form-field>
+  <mat-form-field appearance="outline">
     <mat-label>Email</mat-label>
     <input type="email" matInput placeholder="Ex. pat@example.com" />
     <mat-error> Please enter a valid email address </mat-error>
     <mat-error> Email is <strong>required</strong> </mat-error>
   </mat-form-field>
 </form>
+
+<br>
+<br>
+<br>
+
+
+<section class="field-announcement">
+  <mat-card class="add-card">
+    <mat-card-header>Додати оголошення</mat-card-header>
+
+    <mat-card-content>
+
+
+      <form class="field-description">
+        <mat-form-field class="example-full-width">
+          <mat-label>Заголовок</mat-label>
+          <input matInput placeholder="Ex. Pizza" value="Sushi">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-label>Додайте опис</mat-label>
+          <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
+        </mat-form-field>
+      </form>
+
+      <div class="choise-rooms">
+        <h4 class="header-choise">Оберіть кількість кімнат</h4>
+        <mat-form-field appearance="fill">
+          <mat-label>Кількість кімнат</mat-label>
+          <mat-select [(value)]="selected">
+            <mat-option value="1">1</mat-option>
+            <mat-option value="2">2</mat-option>
+            <mat-option value="3">3</mat-option>
+            <mat-option value="4">4</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-mini-fab color="primary">
+        <mat-icon>add</mat-icon>
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</section>

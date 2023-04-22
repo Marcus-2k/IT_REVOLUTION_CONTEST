@@ -1,0 +1,24 @@
+@mixin flexible() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.field-description {
+  @include flexible();
+}
+
+.add-card {
+  @include flexible();
+  max-width: 560px;
+  box-shadow: 1px 1px 5px;
+  border-radius: 10px;
+}
+
+.example-card {
+  max-width: 400px;
+  margin-bottom: 8px;
+}
+
+.choise-rooms {}
