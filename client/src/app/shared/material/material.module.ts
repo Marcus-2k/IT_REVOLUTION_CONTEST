@@ -14,7 +14,7 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 // import { MatGridListModule } from "@angular/material/grid-list";
-// import { MatCardModule } from "@angular/material/card";
+import { MatCardModule } from "@angular/material/card";
 // import { LayoutModule } from "@angular/cdk/layout";
 // import { MatTableModule } from "@angular/material/table";
 // import { MatNativeDateModule } from "@angular/material/core";
@@ -41,6 +41,7 @@ const Material = [
   MatRadioModule,
   MatSnackBarModule,
   MatProgressBarModule,
+  MatCardModule,
 ];
 
 @NgModule({
