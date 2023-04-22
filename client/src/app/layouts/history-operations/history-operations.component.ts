@@ -7,4 +7,15 @@ import { Component } from '@angular/core';
 })
 export class HistoryOperationsComponent {
 
+  arr=[{
+    src:'./assets/shiba1.jpg',
+    dataStart:new Date(),
+    dataEnd:new Date(),
+    title:'Назва оголошення',
+    description:'Опис оголошення',
+    city:'Назва міста',
+    region:'район',
+    cost:'ціна'
+  },
+  ]
 }

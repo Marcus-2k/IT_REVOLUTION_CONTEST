@@ -19,8 +19,9 @@ import {MatCheckboxModule} from "@angular/material/checkbox";
 import { HistoryOperationsComponent } from './layouts/history-operations/history-operations.component';
 
 
+
 @NgModule({
-  declarations: [AppComponent, RealEstateNewComponent,   HistoryOperationsComponent,  ],
+  declarations: [AppComponent, RealEstateNewComponent,   HistoryOperationsComponent,   ],
   imports: [
     BrowserModule,
     RoutingModule,
