@@ -1,9 +1,10 @@
 .container-register {
   position: relative;
+  margin-bottom: 15px;
   &-close {
     position: absolute;
-    top: -40px;
-    right: -20px;
+    top: -20px;
+    right: 0px;
   }
   .navigation {
     width: 100%;
