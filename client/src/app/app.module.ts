@@ -23,6 +23,7 @@ import { HistoryOperationsComponent } from './layouts/history-operations/history
 import { LoginComponent } from './layouts/auth/login/login.component';
 import { RegisterComponent } from './layouts/auth/register/register.component';
 import { TokenInterceptor } from './shared/classes/token.interseptor';
+import { ApartmentsCardsComponent } from './layouts/apartments-cards/apartments-cards.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { TokenInterceptor } from './shared/classes/token.interseptor';
     HistoryOperationsComponent,
     LoginComponent,
     RegisterComponent,
+    ApartmentsCardsComponent,
   ],
   imports: [
     BrowserModule,
