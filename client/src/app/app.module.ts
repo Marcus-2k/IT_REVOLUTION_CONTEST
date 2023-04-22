@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 // Reactive Form
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -14,14 +15,23 @@ import { RoutingModule } from '../app/shared/routing/routing.module';
 // Component
 import { AppComponent } from './app.component';
 import { RealEstateNewComponent } from './layouts/real-estate-new/real-estate-new.component';
-import {MatCardModule} from "@angular/material/card";
-import {MatCheckboxModule} from "@angular/material/checkbox";
+import { MatCardModule } from '@angular/material/card';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 import { HistoryOperationsComponent } from './layouts/history-operations/history-operations.component';
 
-
+// Auth Layouts
+import { LoginComponent } from './layouts/auth/login/login.component';
+import { RegisterComponent } from './layouts/auth/register/register.component';
+import { TokenInterceptor } from './shared/classes/token.interseptor';
 
 @NgModule({
-  declarations: [AppComponent, RealEstateNewComponent,   HistoryOperationsComponent,   ],
+  declarations: [
+    AppComponent,
+    RealEstateNewComponent,
+    HistoryOperationsComponent,
+    LoginComponent,
+    RegisterComponent,
+  ],
   imports: [
     BrowserModule,
     RoutingModule,
@@ -31,8 +41,11 @@ import { HistoryOperationsComponent } from './layouts/history-operations/history
     BrowserAnimationsModule,
     MatCardModule,
     MatCheckboxModule,
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, multi: true, useClass: TokenInterceptor },
+  ],
   bootstrap: [AppComponent],
 })
-export class AppModule {};
+export class AppModule {}

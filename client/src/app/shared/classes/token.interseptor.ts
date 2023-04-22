@@ -10,8 +10,7 @@ import { Router } from '@angular/router';
 
 import { catchError, Observable, switchMap, tap, throwError } from 'rxjs';
 
-import { AuthService } from 'src/service/server/auth.service';
-
+import { AuthService } from '../service/server/auth.service';
 import { environment } from 'src/environments/environment';
 
 @Injectable()

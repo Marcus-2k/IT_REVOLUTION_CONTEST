@@ -1,9 +1,14 @@
 <div class="container">
-  <button mat-raised-button (click)="testFunction()">
-    Angular {{ title }}
-  </button>
-  <mat-spinner></mat-spinner>
-  <app-history-operations></app-history-operations>
-  <div class="content-element-center"></div>
-  <app-real-estate-new></app-real-estate-new>
+  <div class="header">
+    <button mat-raised-button color="primary" (click)="login()">Login</button>
+    <button mat-raised-button color="primary" (click)="register()">
+      Register
+    </button>
+  </div>
+
+  <div class="content">
+    <app-history-operations></app-history-operations>
+
+    <app-real-estate-new></app-real-estate-new>
+  </div>
 </div>
