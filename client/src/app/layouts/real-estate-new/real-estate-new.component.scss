@@ -1,7 +1,7 @@
 @mixin flexible() {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   flex-direction: column;
 }
 
@@ -9,16 +9,42 @@
   @include flexible();
 }
 
-.add-card {
-  @include flexible();
-  max-width: 560px;
+.create-card {
+  display: flex;
+  align-items: center;
+  max-width: 700px;
   box-shadow: 1px 1px 5px;
   border-radius: 10px;
 }
 
+.main-card-content {
+  @include flexible();
+}
+
 .example-card {
-  max-width: 400px;
+  max-width: 300px;
   margin-bottom: 8px;
 }
 
-.choise-rooms {}
+.field-label {
+  width: 400px;
+}
+
+.form-description,
+.input-description {
+  width: 580px;
+  min-height: 200px;
+}
+
+.inputs-сharacteristic {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  align-items: center;
+}
+
+.input-area {
+  margin: 8px;
+  max-width: 180px;
+  width: 100%;
+}

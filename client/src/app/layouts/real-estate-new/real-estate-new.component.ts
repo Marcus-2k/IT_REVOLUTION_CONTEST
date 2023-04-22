@@ -6,5 +6,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./real-estate-new.component.scss'],
 })
 export class RealEstateNewComponent {
-  selected: number = 0;
+  select = 0;
+
+  totalArea: number = 0;
+  kitchen: number = 0;
+  residential: number = 0;
+
+  utilitiesIncluded = false;
+  allowedPets = false;
+  noSmoking = false;
+  centralizedHeating = false;
+  offerIntermediary = false;
+  checkboxColor = 'primary';
 }

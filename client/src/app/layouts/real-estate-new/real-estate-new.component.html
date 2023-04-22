@@ -1,34 +1,21 @@
 <!--  -->
-
-<form>
-  <mat-form-field appearance="outline">
-    <mat-label>Email</mat-label>
-    <input type="email" matInput placeholder="Ex. pat@example.com" />
-    <mat-error> Please enter a valid email address </mat-error>
-    <mat-error> Email is <strong>required</strong> </mat-error>
-  </mat-form-field>
-</form>
-
 <br>
-<br>
-<br>
-
 
 <section class="field-announcement">
-  <mat-card class="add-card">
-    <mat-card-header>Додати оголошення</mat-card-header>
+  <mat-card class="create-card">
+    <mat-card-header>
+      <h1>Нове оголошення</h1>
+    </mat-card-header>
 
-    <mat-card-content>
-
-
+    <mat-card-content class="main-card-content">
       <form class="field-description">
-        <mat-form-field class="example-full-width">
+        <mat-form-field class="field-label">
           <mat-label>Заголовок</mat-label>
-          <input matInput placeholder="Ex. Pizza" value="Sushi">
+          <input matInput placeholder="Ваш заголовок до житла">
         </mat-form-field>
-        <mat-form-field class="example-full-width">
+        <mat-form-field class="form-description">
           <mat-label>Додайте опис</mat-label>
-          <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
+          <textarea matInput placeholder="Залиште детальний опис житла" class="input-description"></textarea>
         </mat-form-field>
       </form>
 
@@ -36,20 +23,64 @@
         <h4 class="header-choise">Оберіть кількість кімнат</h4>
         <mat-form-field appearance="fill">
           <mat-label>Кількість кімнат</mat-label>
-          <mat-select [(value)]="selected">
+          <mat-select [(ngModel)]="select">
+            <mat-option value="smart-apartment">Кухня-студія</mat-option>
             <mat-option value="1">1</mat-option>
             <mat-option value="2">2</mat-option>
             <mat-option value="3">3</mat-option>
-            <mat-option value="4">4</mat-option>
+            <mat-option value="4">4+</mat-option>
           </mat-select>
         </mat-form-field>
       </div>
 
+      <mat-card class="сharacteristic">
+        <mat-card-content>
+          <h2 class="header-сharacteristic">Характеристика</h2>
+
+          <section class="inputs-сharacteristic">
+            <mat-form-field class="input-area" appearance="fill">
+              <mat-label>Загальна площа м²</mat-label>
+              <input matInput type="number" [(ngModel)]="totalArea">
+            </mat-form-field>
+            <mat-form-field class="input-area" appearance="fill">
+              <mat-label>Житлова м²</mat-label>
+              <input matInput type="number" [(ngModel)]="residential">
+            </mat-form-field>
+            <mat-form-field class="input-area" appearance="fill">
+              <mat-label>Кухня м²</mat-label>
+              <input matInput type="number" [(ngModel)]="kitchen">
+            </mat-form-field>
+          </section>
+
+          <section class="checkbox-section">
+            <mat-checkbox [(ngModel)]="allowedPets" [color]="checkboxColor">Можна з тваринами</mat-checkbox>
+          </section>
+          <section class="checkbox-section">
+            <mat-checkbox [(ngModel)]="noSmoking" [color]="checkboxColor">Заборонено паління</mat-checkbox>
+          </section>
+          <section class="checkbox-section">
+            <mat-checkbox [(ngModel)]="utilitiesIncluded" [color]="checkboxColor">Комунальні входять в вартість
+            </mat-checkbox>
+          </section>
+          <section class="checkbox-section">
+            <mat-checkbox [(ngModel)]="centralizedHeating" [color]="checkboxColor">Централізоване опалення
+            </mat-checkbox>
+          </section>
+          <section class="checkbox-section">
+            <mat-checkbox class="checkbox" [(ngModel)]="offerIntermediary" [color]="checkboxColor">Пропозиція від
+              посередника</mat-checkbox>
+          </section>
+
+        </mat-card-content>
+      </mat-card>
 
     </mat-card-content>
+
+
     <mat-card-actions>
-      <button mat-mini-fab color="primary">
+      <button mat-raised-button color="primary">
         <mat-icon>add</mat-icon>
+        <span>Додати</span>
       </button>
     </mat-card-actions>
   </mat-card>
