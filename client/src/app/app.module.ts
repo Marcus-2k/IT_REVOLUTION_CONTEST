@@ -6,9 +6,10 @@ import { MaterialModule } from '../app/shared/material/material.module';
 import { RoutingModule } from '../app/shared/routing/routing.module';
 
 import { AppComponent } from './app.component';
+import { RealEstateComponent } from './layouts/real-estate/real-estate.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, RealEstateComponent],
   imports: [BrowserModule, RoutingModule, MaterialModule],
   providers: [],
   bootstrap: [AppComponent],
