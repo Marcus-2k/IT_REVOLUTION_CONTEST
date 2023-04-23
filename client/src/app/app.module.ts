@@ -20,7 +20,7 @@ import { RegisterComponent } from './layouts/auth/register/register.component';
 // 404
 import { NotFoundComponent } from './not-found/not-found.component';
 
-// Component
+// Components
 import { AppComponent } from './app.component';
 import { RealEstateNewComponent } from './layouts/real-estate-new/real-estate-new.component';
 import { MatCardModule } from '@angular/material/card';
@@ -28,6 +28,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { HistoryOperationsComponent } from './layouts/history-operations/history-operations.component';
 import { ApartmentsCardsComponent } from './layouts/apartments-cards/apartments-cards.component';
 import { HeaderComponent } from './layouts/components/header/header.component';
+import { HomeComponent } from './layouts/home/home.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { HeaderComponent } from './layouts/components/header/header.component';
     ApartmentsCardsComponent,
     HeaderComponent,
     NotFoundComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
