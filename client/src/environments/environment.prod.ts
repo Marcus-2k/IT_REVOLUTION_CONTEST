@@ -1,7 +1,7 @@
 const PROTOCOL: 'http' | 'https' = 'http';
 
 const HOST: string = 'localhost';
-const PORT: string = ':5000';
+const PORT: string = ':8000';
 
 export const environment = {
   production: false,
