@@ -118,6 +118,7 @@ body {
 
 .card-description:hover {
   text-decoration: underline rgb(52, 68, 167);
+  cursor: pointer;
 }
 
 .card-price {
@@ -155,6 +156,7 @@ body {
 
   &:hover {
     text-decoration: underline;
+    cursor: pointer;
   }
 }
 
