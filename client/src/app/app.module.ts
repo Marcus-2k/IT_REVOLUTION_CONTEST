@@ -29,6 +29,7 @@ import { HistoryOperationsComponent } from './layouts/history-operations/history
 import { ApartmentsCardsComponent } from './layouts/apartments-cards/apartments-cards.component';
 import { HeaderComponent } from './layouts/components/header/header.component';
 import { HomeComponent } from './layouts/home/home.component';
+import { AccountComponent } from './layouts/account/account.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { HomeComponent } from './layouts/home/home.component';
     HeaderComponent,
     NotFoundComponent,
     HomeComponent,
+    AccountComponent,
   ],
   imports: [
     BrowserModule,
