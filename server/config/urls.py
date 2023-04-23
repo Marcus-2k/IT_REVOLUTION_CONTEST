@@ -24,5 +24,5 @@ urlpatterns = [
     path('auth/', include('djoser.urls.authtoken')),
     path('auth/', include('djoser.urls.jwt')),
     path('auth/', include('src.users.urls')),
-    path('apartment/', include('src.core.urls'))
+    path('apartment/', include('src.core.urls')),
 ]

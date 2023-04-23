@@ -30,5 +30,22 @@ class CustomUser(AbstractUser, PermissionsMixin):
 
 class UserProfile(models.Model):
     user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, blank=True, null=True)
-    real_estate = models.ForeignKey(RealEstate, blank=True, null=True, on_delete=models.PROTECT)
+    avatar = models.ImageField(upload_to='avatars/', blank=True, null=True)
+    phone_number = models.CharField(max_length=13, blank=True, null=True)
+    real_estate = models.ForeignKey(RealEstate, blank=True, null=True, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.user
+
+
+class DebitCart(models.Model):
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, blank=True, null=True, on_delete=models.CASCADE)
+    number_card = models.CharField(max_length=16, blank=True, null=True)
+    month_end = models.DateField()
+    year_end = models.DateField()
+    balance = models.PositiveIntegerField(default=25000)
+
+    def __str__(self):
+        return f'{self.user} - {self.number_card}'
+
 
