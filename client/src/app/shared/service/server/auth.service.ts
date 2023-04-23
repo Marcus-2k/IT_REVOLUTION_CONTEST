@@ -17,36 +17,28 @@ export class AuthService {
 
   url_server: string = environment.URL_SERVER_API + 'auth/';
 
-  register(
-    user: UserRegister
-  ): Observable<{ accessToken: string; refreshToken: string }> {
+  register(user: UserRegister): Observable<{ auth_token: string }> {
     return this.http
-      .post<{ accessToken: string; refreshToken: string }>(
-        `${this.url_server}users`,
-        user,
-        { withCredentials: true }
-      )
+      .post<{ auth_token: string }>(`${this.url_server}users`, user, {
+        withCredentials: true,
+      })
       .pipe(
-        tap(({ accessToken }) => {
-          localStorage.setItem('auth-token', accessToken);
-          this.setToken(accessToken);
+        tap(({ auth_token }) => {
+          localStorage.setItem('auth-token', auth_token);
+          this.setToken(auth_token);
         })
       );
   }
 
-  login(
-    user: UserLogin
-  ): Observable<{ accessToken: string; refreshToken: string }> {
+  login(user: UserLogin): Observable<{ auth_token: string }> {
     return this.http
-      .post<{ accessToken: string; refreshToken: string }>(
-        `${this.url_server}token/login`,
-        user,
-        { withCredentials: true }
-      )
+      .post<{ auth_token: string }>(`${this.url_server}token/login`, user, {
+        withCredentials: true,
+      })
       .pipe(
-        tap(({ accessToken }) => {
-          localStorage.setItem('auth-token', accessToken);
-          this.setToken(accessToken);
+        tap(({ auth_token }) => {
+          localStorage.setItem('auth-token', auth_token);
+          this.setToken(auth_token);
         })
       );
   }
@@ -58,16 +50,16 @@ export class AuthService {
     );
   }
 
-  refresh(): Observable<{ accessToken: string; refreshToken: string }> {
+  refresh(): Observable<{ auth_token: string; refreshToken: string }> {
     return this.http
-      .get<{ accessToken: string; refreshToken: string }>(
+      .get<{ auth_token: string; refreshToken: string }>(
         `${this.url_server}refresh`,
         { withCredentials: true }
       )
       .pipe(
-        tap(({ accessToken }) => {
-          localStorage.setItem('auth-token', accessToken);
-          this.setToken(accessToken);
+        tap(({ auth_token }) => {
+          localStorage.setItem('auth-token', auth_token);
+          this.setToken(auth_token);
         })
       );
   }

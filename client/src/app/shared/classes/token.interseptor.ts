@@ -12,10 +12,17 @@ import { catchError, Observable, switchMap, tap, throwError } from 'rxjs';
 
 import { AuthService } from '../service/server/auth.service';
 import { environment } from 'src/environments/environment';
+import { OpenDialogService } from '../service/open-dialog.service';
+import { OpenSnackBarService } from '../service/open-snack-bar.service';
 
 @Injectable()
 export class TokenInterceptor implements HttpInterceptor {
-  constructor(private auth: AuthService, private router: Router) {}
+  constructor(
+    private auth: AuthService,
+    private router: Router,
+    private openDialog: OpenDialogService,
+    private openSnackBar: OpenSnackBarService
+  ) {}
 
   private HOST: string = environment.HOST;
   private PORT: string = environment.PORT;
@@ -33,8 +40,8 @@ export class TokenInterceptor implements HttpInterceptor {
         ) {
           return this.auth.refresh().pipe(
             switchMap((res) => {
-              this.auth.setToken(res.accessToken);
-              localStorage.setItem('auth-token', res.accessToken);
+              this.auth.setToken(res.auth_token);
+              localStorage.setItem('auth-token', res.auth_token);
 
               return next.handle(
                 req.clone({
@@ -54,8 +61,8 @@ export class TokenInterceptor implements HttpInterceptor {
               this.router.navigate(['/']);
 
               setTimeout(() => {
-                // this.openDialog.openLoginWindow();
-                // this.openSnackBar.open('Потрібно авторизуватися.', undefined);
+                this.openDialog.openLoginWindow();
+                this.openSnackBar.open('Потрібно авторизуватися.', undefined);
               }, 250);
             })
           );
