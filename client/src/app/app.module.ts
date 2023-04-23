@@ -43,11 +43,8 @@ import { AccountComponent } from './layouts/account/account.component';
     HeaderComponent,
     NotFoundComponent,
     HomeComponent,
-<<<<<<< HEAD
     AccountComponent,
-=======
     PricePipe,
->>>>>>> 3a11649f11297c56e0702070ce2343d71849175c
   ],
   imports: [
     BrowserModule,
