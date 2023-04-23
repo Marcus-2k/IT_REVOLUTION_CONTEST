@@ -1,87 +1,82 @@
 <!--  -->
-<br>
 
 <section class="field-announcement">
-  <mat-card class="create-card">
-    <mat-card-header>
-      <h1>Нове оголошення</h1>
-    </mat-card-header>
+  <mat-card-header>
+    <h2>Нове оголошення</h2>
+  </mat-card-header>
 
-    <mat-card-content class="main-card-content">
-      <form class="field-description">
-        <mat-form-field class="field-label">
-          <mat-label>Заголовок</mat-label>
-          <input matInput placeholder="Ваш заголовок до житла">
+  <mat-card-content>
+    <div>
+      <!--  -->
+      <mat-form-field class="form-field" appearance="outline">
+        <mat-label>Заголовок</mat-label>
+        <input matInput placeholder="Ваш заголовок до житла" />
+      </mat-form-field>
+
+      <mat-form-field class="form-field" appearance="outline">
+        <mat-label>Опис об'єкта</mat-label>
+        <textarea
+          class="field-description"
+          matInput
+          placeholder="Детальний опис житла"
+        ></textarea>
+      </mat-form-field>
+
+      <h4 class="header-choise">Оберіть кількість кімнат</h4>
+      <mat-form-field class="form-field" appearance="outline">
+        <mat-label>Кількість кімнат</mat-label>
+        <mat-select [(ngModel)]="number_of_rooms">
+          <mat-option>Кухня-студія</mat-option>
+          <mat-option>1</mat-option>
+          <mat-option>2</mat-option>
+          <mat-option>3</mat-option>
+          <mat-option>4</mat-option>
+          <mat-option>4+</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <h2 class="header-characteristic">Характеристика</h2>
+
+      <section class="inputs-characteristic">
+        <mat-form-field class="input-area" appearance="outline">
+          <mat-label>Загальна площа м²</mat-label>
+          <input matInput type="number" [(ngModel)]="totalArea" />
         </mat-form-field>
-        <mat-form-field class="form-description">
-          <mat-label>Додайте опис</mat-label>
-          <textarea matInput placeholder="Залиште детальний опис житла" class="input-description"></textarea>
+        <mat-form-field class="input-area" appearance="outline">
+          <mat-label>Житлова м²</mat-label>
+          <input matInput type="number" [(ngModel)]="residential" />
         </mat-form-field>
-      </form>
-
-      <div class="choise-rooms">
-        <h4 class="header-choise">Оберіть кількість кімнат</h4>
-        <mat-form-field appearance="fill">
-          <mat-label>Кількість кімнат</mat-label>
-          <mat-select [(ngModel)]="select">
-            <mat-option value="smart-apartment">Кухня-студія</mat-option>
-            <mat-option value="1">1</mat-option>
-            <mat-option value="2">2</mat-option>
-            <mat-option value="3">3</mat-option>
-            <mat-option value="4">4+</mat-option>
-          </mat-select>
+        <mat-form-field class="input-area" appearance="outline">
+          <mat-label>Кухня м²</mat-label>
+          <input matInput type="number" [(ngModel)]="kitchen" />
         </mat-form-field>
-      </div>
+      </section>
 
-      <mat-card class="сharacteristic">
-        <mat-card-content>
-          <h2 class="header-сharacteristic">Характеристика</h2>
+      <section class="checkbox-section">
+        <mat-checkbox [(ngModel)]="allowedPets" color="primary">
+          Можна з тваринами
+        </mat-checkbox>
+        <mat-checkbox [(ngModel)]="noSmoking" color="primary">
+          Заборонено паління
+        </mat-checkbox>
+        <mat-checkbox [(ngModel)]="utilitiesIncluded" color="primary">
+          Комунальні входять в вартість
+        </mat-checkbox>
+        <mat-checkbox [(ngModel)]="centralizedHeating" color="primary">
+          Централізоване опалення
+        </mat-checkbox>
+        <mat-checkbox [(ngModel)]="offerIntermediary" color="primary">
+          Пропозиція від посередника
+        </mat-checkbox>
+      </section>
+    </div>
+    <!--  -->
+  </mat-card-content>
 
-          <section class="inputs-сharacteristic">
-            <mat-form-field class="input-area" appearance="fill">
-              <mat-label>Загальна площа м²</mat-label>
-              <input matInput type="number" [(ngModel)]="totalArea">
-            </mat-form-field>
-            <mat-form-field class="input-area" appearance="fill">
-              <mat-label>Житлова м²</mat-label>
-              <input matInput type="number" [(ngModel)]="residential">
-            </mat-form-field>
-            <mat-form-field class="input-area" appearance="fill">
-              <mat-label>Кухня м²</mat-label>
-              <input matInput type="number" [(ngModel)]="kitchen">
-            </mat-form-field>
-          </section>
-
-          <section class="checkbox-section">
-            <mat-checkbox [(ngModel)]="allowedPets" [color]="checkboxColor">Можна з тваринами</mat-checkbox>
-          </section>
-          <section class="checkbox-section">
-            <mat-checkbox [(ngModel)]="noSmoking" [color]="checkboxColor">Заборонено паління</mat-checkbox>
-          </section>
-          <section class="checkbox-section">
-            <mat-checkbox [(ngModel)]="utilitiesIncluded" [color]="checkboxColor">Комунальні входять в вартість
-            </mat-checkbox>
-          </section>
-          <section class="checkbox-section">
-            <mat-checkbox [(ngModel)]="centralizedHeating" [color]="checkboxColor">Централізоване опалення
-            </mat-checkbox>
-          </section>
-          <section class="checkbox-section">
-            <mat-checkbox class="checkbox" [(ngModel)]="offerIntermediary" [color]="checkboxColor">Пропозиція від
-              посередника</mat-checkbox>
-          </section>
-
-        </mat-card-content>
-      </mat-card>
-
-    </mat-card-content>
-
-
-    <mat-card-actions>
-      <button mat-raised-button color="primary">
-        <mat-icon>add</mat-icon>
-        <span>Додати</span>
-      </button>
-    </mat-card-actions>
-  </mat-card>
+  <mat-card-actions>
+    <button mat-raised-button color="primary">
+      <mat-icon>add</mat-icon>
+      <span>Створити</span>
+    </button>
+  </mat-card-actions>
 </section>

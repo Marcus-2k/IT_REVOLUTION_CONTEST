@@ -5,8 +5,13 @@
   flex-direction: column;
 }
 
-.field-description {
-  @include flexible();
+.field-announcement {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .create-card {
@@ -21,28 +26,22 @@
   @include flexible();
 }
 
-.example-card {
-  max-width: 300px;
-  margin-bottom: 8px;
+.form-field {
+  width: 100%;
+  .field-description {
+    min-height: 200px;
+    height: 300px;
+    max-height: 400px;
+  }
 }
 
 .field-label {
   width: 400px;
 }
 
-.form-description,
-.input-description {
-  width: 580px;
-  min-height: 200px;
+mat-card-content {
+  margin: 15px 0;
 }
-
-.inputs-сharacteristic {
-  display: flex;
-  flex-wrap: wrap;
-  align-content: center;
-  align-items: center;
-}
-
 .input-area {
   margin: 8px;
   max-width: 180px;

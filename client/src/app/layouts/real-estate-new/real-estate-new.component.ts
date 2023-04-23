@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./real-estate-new.component.scss'],
 })
 export class RealEstateNewComponent {
-  select = 0;
+  number_of_rooms: number = 0;
 
   totalArea: number = 0;
   kitchen: number = 0;
@@ -17,5 +17,4 @@ export class RealEstateNewComponent {
   noSmoking = false;
   centralizedHeating = false;
   offerIntermediary = false;
-  checkboxColor = 'primary';
 }
