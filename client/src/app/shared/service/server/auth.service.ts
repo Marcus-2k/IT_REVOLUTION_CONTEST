@@ -19,7 +19,7 @@ export class AuthService {
 
   register(user: UserRegister): Observable<{ auth_token: string }> {
     return this.http
-      .post<{ auth_token: string }>(`${this.url_server}users`, user, {
+      .post<{ auth_token: string }>(`${this.url_server}users/`, user, {
         withCredentials: true,
       })
       .pipe(
@@ -32,7 +32,7 @@ export class AuthService {
 
   login(user: UserLogin): Observable<{ auth_token: string }> {
     return this.http
-      .post<{ auth_token: string }>(`${this.url_server}token/login`, user, {
+      .post<{ auth_token: string }>(`${this.url_server}token/login/`, user, {
         withCredentials: true,
       })
       .pipe(
@@ -45,7 +45,7 @@ export class AuthService {
 
   checking(): Observable<{ authorization: boolean; message: string }> {
     return this.http.get<{ authorization: boolean; message: string }>(
-      `${this.url_server}checking`,
+      `${this.url_server}checking/`,
       { withCredentials: true }
     );
   }
@@ -53,7 +53,7 @@ export class AuthService {
   refresh(): Observable<{ auth_token: string; refreshToken: string }> {
     return this.http
       .get<{ auth_token: string; refreshToken: string }>(
-        `${this.url_server}refresh`,
+        `${this.url_server}refresh/`,
         { withCredentials: true }
       )
       .pipe(
@@ -66,7 +66,7 @@ export class AuthService {
 
   logout(): Observable<any> {
     return this.http
-      .get<any>(`${this.url_server}token/logout`, {
+      .get<any>(`${this.url_server}token/logout/`, {
         withCredentials: true,
       })
       .pipe(
