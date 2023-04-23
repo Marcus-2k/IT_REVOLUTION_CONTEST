@@ -38,7 +38,13 @@ export class RegisterComponent implements OnInit {
     }
 
     this.formRegister = new UntypedFormGroup({
-      name: new UntypedFormControl(null, [
+      first_name: new UntypedFormControl(null, [
+        Validators.required,
+        Validators.pattern('^[a-zA-Z]+$'),
+        Validators.minLength(4),
+        Validators.maxLength(16),
+      ]),
+      last_name: new UntypedFormControl(null, [
         Validators.required,
         Validators.pattern('^[a-zA-Z]+$'),
         Validators.minLength(4),

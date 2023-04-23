@@ -24,20 +24,58 @@
       <input
         matInput
         type="text"
-        formControlName="name"
+        formControlName="first_name"
         placeholder="Kaitlyn"
         autocomplete="off"
       />
-      <mat-error *ngIf="formRegister.controls['name'].errors?.['minlength']">
+      <mat-error
+        *ngIf="formRegister.controls['first_name'].errors?.['minlength']"
+      >
         Мінімальна кількість символів <strong> 4 </strong>
       </mat-error>
-      <mat-error *ngIf="formRegister.controls['name'].errors?.['maxlength']">
+      <mat-error
+        *ngIf="formRegister.controls['first_name'].errors?.['maxlength']"
+      >
         Максимальна кількість символів <strong> 16 </strong>
       </mat-error>
-      <mat-error *ngIf="formRegister.controls['name'].errors?.['required']">
+      <mat-error
+        *ngIf="formRegister.controls['first_name'].errors?.['required']"
+      >
         Ваше ім'я є <strong>обов'язковим!</strong>
       </mat-error>
-      <mat-error *ngIf="formRegister.controls['name'].errors?.['pattern']">
+      <mat-error
+        *ngIf="formRegister.controls['first_name'].errors?.['pattern']"
+      >
+        Дозволені літери <strong>a-z,A-Z</strong>. Всі інші символи (пробіли, _,
+        -, ...) заборонено
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="container-register__form-field">
+      <mat-label>Прізвище</mat-label>
+      <input
+        matInput
+        type="text"
+        formControlName="last_name"
+        placeholder="Macdonald"
+        autocomplete="off"
+      />
+      <mat-error
+        *ngIf="formRegister.controls['last_name'].errors?.['minlength']"
+      >
+        Мінімальна кількість символів <strong> 4 </strong>
+      </mat-error>
+      <mat-error
+        *ngIf="formRegister.controls['last_name'].errors?.['maxlength']"
+      >
+        Максимальна кількість символів <strong> 16 </strong>
+      </mat-error>
+      <mat-error
+        *ngIf="formRegister.controls['last_name'].errors?.['required']"
+      >
+        Ваше Прізвище є <strong>обов'язковим!</strong>
+      </mat-error>
+      <mat-error *ngIf="formRegister.controls['last_name'].errors?.['pattern']">
         Дозволені літери <strong>a-z,A-Z</strong>. Всі інші символи (пробіли, _,
         -, ...) заборонено
       </mat-error>
