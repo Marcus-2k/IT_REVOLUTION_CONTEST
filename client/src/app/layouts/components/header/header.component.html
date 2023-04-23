@@ -96,6 +96,43 @@
               <span *ngIf="burgerMenu">Персональний кабінет</span>
             </a>
           </li>
+          <li class="user__list-link" *ngIf="authenticatedUser">
+            <a
+              routerLink="/real-estate-new"
+              routerLinkActive="link-item-active"
+              class="link-item"
+              (click)="clickBurgerMenu()"
+            >
+              <span class="material-symbols-outlined google-icon">
+                add_circle
+              </span>
+              <span *ngIf="burgerMenu">Створити об'єкт нерухомості</span>
+            </a>
+          </li>
+          <li class="user__list-link" *ngIf="authenticatedUser">
+            <a
+              routerLink="/history-operations"
+              routerLinkActive="link-item-active"
+              class="link-item"
+              (click)="clickBurgerMenu()"
+            >
+              <span class="material-symbols-outlined google-icon">
+                history
+              </span>
+              <span *ngIf="burgerMenu">Оренда</span>
+            </a>
+          </li>
+          <li class="user__list-link" *ngIf="authenticatedUser">
+            <a
+              routerLink="/apartments-cards"
+              routerLinkActive="link-item-active"
+              class="link-item"
+              (click)="clickBurgerMenu()"
+            >
+              <span class="material-symbols-outlined"> bedroom_parent </span>
+              <span *ngIf="burgerMenu">Ваші об'єкти нерухомості</span>
+            </a>
+          </li>
 
           <li class="user__list-link" *ngIf="authenticatedUser">
             <a
