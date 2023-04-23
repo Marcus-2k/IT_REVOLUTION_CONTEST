@@ -22,7 +22,7 @@ export class AuthService {
   ): Observable<{ accessToken: string; refreshToken: string }> {
     return this.http
       .post<{ accessToken: string; refreshToken: string }>(
-        `${this.url_server}register`,
+        `${this.url_server}users`,
         user,
         { withCredentials: true }
       )
@@ -39,7 +39,7 @@ export class AuthService {
   ): Observable<{ accessToken: string; refreshToken: string }> {
     return this.http
       .post<{ accessToken: string; refreshToken: string }>(
-        `${this.url_server}login`,
+        `${this.url_server}token/login`,
         user,
         { withCredentials: true }
       )
@@ -74,14 +74,13 @@ export class AuthService {
 
   logout(): Observable<any> {
     return this.http
-      .get<any>(`${this.url_server}logout`, {
+      .get<any>(`${this.url_server}token/logout`, {
         withCredentials: true,
       })
       .pipe(
         tap(() => {
           this.setToken(null);
           localStorage.removeItem('auth-token');
-          localStorage.removeItem('_id');
         })
       );
   }
