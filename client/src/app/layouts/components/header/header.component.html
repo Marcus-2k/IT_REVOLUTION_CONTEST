@@ -144,7 +144,7 @@
               <span *ngIf="burgerMenu">Вихід</span>
             </a>
           </li>
-          <li class="user__list-link" *ngIf="!authenticatedUser">
+          <li class="user__list-link">
             <a class="link-item" (click)="clickBurgerMenu(); openLoginWindow()">
               <span class="material-symbols-outlined google-icon">login</span>
               <span *ngIf="burgerMenu">Вхід</span>
