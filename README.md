@@ -12,4 +12,4 @@ Comand for start client
 # Server
 
 Comand for start server
-1.
+1. python manage.py runserver
