@@ -6,6 +6,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 // Service, Pipe, Guard, Token, Class, Resolver, Routing
+import { PricePipe } from './shared/pipe/price.pipe';
 import { TokenInterceptor } from './shared/classes/token.interseptor';
 import { RoutingModule } from '../app/shared/routing/routing.module';
 
@@ -42,7 +43,11 @@ import { AccountComponent } from './layouts/account/account.component';
     HeaderComponent,
     NotFoundComponent,
     HomeComponent,
+<<<<<<< HEAD
     AccountComponent,
+=======
+    PricePipe,
+>>>>>>> 3a11649f11297c56e0702070ce2343d71849175c
   ],
   imports: [
     BrowserModule,
