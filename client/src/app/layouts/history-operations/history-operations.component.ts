@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HistoryOperations } from 'src/app/shared/interface/interfaces';
+import { RenameTitleService } from 'src/app/shared/service/rename-title.service';
 
 @Component({
   selector: 'app-history-operations',
@@ -7,10 +8,12 @@ import { HistoryOperations } from 'src/app/shared/interface/interfaces';
   styleUrls: ['./history-operations.component.scss'],
 })
 export class HistoryOperationsComponent implements OnInit {
-  constructor() {}
+  constructor(private renameTitle: RenameTitleService) {}
 
   ngOnInit(): void {
     console.log('Start ngOnInit History-Operations');
+
+    this.renameTitle.renameTitleSite('Історія операцій');
   }
 
   history: HistoryOperations[] = [
