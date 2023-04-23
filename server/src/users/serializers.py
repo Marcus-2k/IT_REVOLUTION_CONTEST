@@ -20,7 +20,7 @@ class CustomUserCreateSerializer(UserCreateSerializer):
 
 
 class ProfileUserSerializer(serializers.ModelSerializer):
-    real_estate = serializers.SerializerMethodField()
+    real_estate = RealEstateSerializer(many=True, read_only=True)
     # real_estate = RealEstateSerializer(many=True, read_only=True)
     # real_estate = serializers.SlugRelatedField(read_only=True, slug_field='title')
 
@@ -28,11 +28,11 @@ class ProfileUserSerializer(serializers.ModelSerializer):
         model = UserProfile
         fields = ('id', 'user', 'avatar', 'real_estate', 'phone_number')
 
-    def get_real_estate(self, obj):
-        real_estate = RealEstate.objects.filter(user=obj.user)
-        serializer = RealEstateSerializer(real_estate, many=True)
-
-        return serializer.data
+    # def get_real_estate(self, obj):
+    #     real_estate = RealEstate.objects.filter(user=obj.user)
+    #     serializer = RealEstateSerializer(real_estate, many=True)
+    #
+    #     return serializer.data
 
 
 class UpdateUserProfileSerializer(serializers.ModelSerializer):
