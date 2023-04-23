@@ -6,6 +6,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 // Service, Pipe, Guard, Token, Class, Resolver, Routing
+import { PricePipe } from './shared/pipe/price.pipe';
 import { TokenInterceptor } from './shared/classes/token.interseptor';
 import { RoutingModule } from '../app/shared/routing/routing.module';
 
@@ -41,6 +42,7 @@ import { HomeComponent } from './layouts/home/home.component';
     HeaderComponent,
     NotFoundComponent,
     HomeComponent,
+    PricePipe,
   ],
   imports: [
     BrowserModule,

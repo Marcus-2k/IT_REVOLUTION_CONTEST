@@ -1,17 +1,25 @@
-<mat-card class="example-card" *ngFor="let res of arr">
+<!--  -->
 
-  <mat-card-header>
-    <mat-card-title>{{res.title}}</mat-card-title>
-    <mat-card-subtitle>{{res.city}},{{res.region}}</mat-card-subtitle>
-    <mat-card-subtitle>{{res.cost}}</mat-card-subtitle>
-  </mat-card-header>
-  <img src="{{res.src}}">
-  <mat-card-content>
-    <p>
-      {{res.description}}
-    </p>
-  </mat-card-content>
-  {{res.dataStart | date:'mediumDate'}}
-  {{res.dataStart | date:'mediumDate'}}
-</mat-card>
-
+<div class="card-list">
+  <mat-card class="example-card" *ngFor="let history_item of history">
+    <mat-card-header>
+      <mat-card-title>{{ history_item.title }}</mat-card-title>
+      <mat-card-subtitle>
+        місто: {{ history_item.city }}, регіон: {{ history_item.region }}
+      </mat-card-subtitle>
+    </mat-card-header>
+    <img [src]="'../../../assets/interer-kvartiri1.jpg'" />
+    <mat-card-content>
+      <p>{{ history_item.cost | price }}&nbsp;₴</p>
+      <p>
+        {{ history_item.description }}
+      </p>
+      <p class="data__start">
+        {{ history_item.dataStart | date : "mediumDate" }}
+      </p>
+      <p class="data__end">
+        {{ history_item.dataStart | date : "mediumDate" }}
+      </p>
+    </mat-card-content>
+  </mat-card>
+</div>

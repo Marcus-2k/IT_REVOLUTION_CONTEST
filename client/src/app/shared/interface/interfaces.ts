@@ -14,3 +14,14 @@ export interface Redirect {
   success: 'authorized' | 'registered' | undefined;
 }
 // Auth END ============================================================================================
+
+export interface HistoryOperations {
+  src: string;
+  dataStart: Date;
+  dataEnd: Date;
+  title: string;
+  description: string;
+  city: string;
+  region: string;
+  cost: number;
+}
