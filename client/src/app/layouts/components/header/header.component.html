@@ -85,7 +85,7 @@
           </div>
         </div>
         <ul class="user__list">
-          <li class="user__list-link" *ngIf="authenticatedUser">
+          <li class="user__list-link">
             <a
               routerLink="/account"
               routerLinkActive="link-item-active"
@@ -96,7 +96,7 @@
               <span *ngIf="burgerMenu">Персональний кабінет</span>
             </a>
           </li>
-          <li class="user__list-link" *ngIf="authenticatedUser">
+          <li class="user__list-link">
             <a
               routerLink="/real-estate-new"
               routerLinkActive="link-item-active"
@@ -109,7 +109,7 @@
               <span *ngIf="burgerMenu">Створити об'єкт нерухомості</span>
             </a>
           </li>
-          <li class="user__list-link" *ngIf="authenticatedUser">
+          <li class="user__list-link">
             <a
               routerLink="/history-operations"
               routerLinkActive="link-item-active"
@@ -122,7 +122,7 @@
               <span *ngIf="burgerMenu">Оренда</span>
             </a>
           </li>
-          <li class="user__list-link" *ngIf="authenticatedUser">
+          <li class="user__list-link">
             <a
               routerLink="/apartments-cards"
               routerLinkActive="link-item-active"
@@ -134,7 +134,7 @@
             </a>
           </li>
 
-          <li class="user__list-link" *ngIf="authenticatedUser">
+          <li class="user__list-link">
             <a
               routerLink="/"
               class="link-item"
