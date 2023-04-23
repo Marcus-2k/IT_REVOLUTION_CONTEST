@@ -14,12 +14,8 @@
 
       <mat-form-field class="form-field" appearance="outline">
         <mat-label>Опис об'єкта</mat-label>
-        <textarea
-          class="field-description"
-          matInput
-          [(ngModel)]="description"
-          placeholder="Детальний опис житла"
-        ></textarea>
+        <textarea class="field-description" matInput [(ngModel)]="description"
+          placeholder="Детальний опис житла"></textarea>
       </mat-form-field>
 
       <h4 class="header-choise">Оберіть кількість кімнат</h4>
@@ -31,7 +27,7 @@
           <mat-option [value]="2">2</mat-option>
           <mat-option [value]="3">3</mat-option>
           <mat-option [value]="4">4</mat-option>
-          <mat-option [value]="5">4+</mat-option>
+          <mat-option [value]="5">5+</mat-option>
         </mat-select>
       </mat-form-field>
 
