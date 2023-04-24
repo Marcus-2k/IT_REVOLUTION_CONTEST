@@ -2,7 +2,7 @@
 
 # Client
 
-Comand for start client
+Command for start client
 1. npm i -g @angular/cli
 2. cd client 
 3. npm i
@@ -11,5 +11,5 @@ Comand for start client
 
 # Server
 
-Comand for start server
+Command for start server
 1. python manage.py runserver
